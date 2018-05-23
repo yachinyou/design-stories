@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+.bold {
+  font-weight: 600;
+}
+
+.black {
+  color: #000;
+}
+
+.green {
+  color: #00B3B3;
+}
+
+.blue {
+  color: #4141D9;
+}
+
+.pink {
+  color: #E21A6B;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.nav-bar {
+  background-color:#fff;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.nav-bar img {
+  width: 135px;
+  height: 20px;
+}
+
+/**** HERO AREA ****/
+
+.hero {
+  padding: 5em 5em 6em 5em;
+  background-image: url("./Images/topography_pattern.png"); 
+  background-image: url("./Images/topography_pattern.png"), linear-gradient(#EEFFFF, #fff); 
+}
+
+.hero h1 {
+  font-size: 3em;
+  font-weight: 300;
+}
+
+.hero h5 {
+  font-size: 1.125em;
+  font-weight: 300;
+  margin-top: 1.5em;
+  line-height: 1.5em;
+  letter-spacing: 0.0625em;
+}
+
+
+.hero .hero-button{
+  background-color: #E21A6B;
+  border: 1px solid #E21A6B;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.875em;
+  letter-spacing: 0.125em;
+  padding: 1em 2em 1em 2em;
+  margin-top: 3em;
+}
+
+.hero .hero-button:hover{
+  background-color: #fff;
+  color: #E21A6B;
+  border: 1px solid #E21A6B;
+}
+
+/**** APP AREA ****/
+
+#app-area {
+  background-color: #FAFCFC;
+  padding: 2em 2em 4em 2em;
+  overflow: auto;
+  box-shadow: 
+        inset 0px 11px 40px -10px #EDF0F0;
+}
+
+.helperText {
+  text-align: center;
+  padding: 1em 1.5em 2em 1.5em;
+  font-size: 1em;
+  line-height: 2em;
+  color: #6A6B6B;
+}
+
+.panel {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px #ccc;
+  margin-bottom: 1em;
+}
+
+.panel-header {
+  background-color: #00B3B3;
+  color: #fff;
+  font-weight: 600;
+  padding:0;
+  font-size: 0.875em;
+  text-align: left;
+  letter-spacing: 0.0625em;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  overflow: auto;
+}
+
+.panel-header p{
+  padding: 1.5em 1.25em;
+  display: inline-block;
+  margin: 0;
+}
+
+.panel-block-area {
+  padding: 1em;
+}
+
+.panel-block-area .draggable {
+  background-color: #fff;
+  border: 1px solid #E3E6E6;
+  text-align: left;
+  color: #6A6B6B;
+  margin: 0em 0em 0.5em 0em;
+  padding: 0em;
+  overflow: auto;
+  border-radius: 4px;
+}
+
+@keyframes fade-in {
+  from {opacity: 0.5;}
+  to {opacity: 1;}
+}
+
+.panel-block-area .draggable:hover{
+  border: 1px solid #00B3B3;
+  color: #000;
+  animation: fade-in 1s;
+}
+
+.panel-block-area .draggable:hover .draggable-actions{
+  visibility: visible;
+}
+
+.panel-block-area .draggable .draggable-title{
+  display: inline-block;
+  font-size: 0.875em;
+  font-weight: 400;
+  letter-spacing: 0.0625em;
+  margin: 1em;
+}
+
+.panel-block-area .draggable .draggable-actions{
+  visibility: hidden;
+  background: rgb(16, 16, 51, 0.6);
+  padding: 0.25em 0.5em 0.5em 0.5em;
+  margin: 0.125em;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.panel-block-area .draggable .draggable-actions img{
+  width: 1em;
+  height: 1em;
+}
+
+/**** PANEL CUSTOMIZATION ****/
+
+.ResearchAndMethodology {
+  padding:0em 0.5em 0.5em 0.5em;
+}
+
+.DesignProcess {
+}
+
+.DesignProcess .panel-block-area .draggable:hover{
+  border: 1px solid #4141D9;
+  color: #000;
+}
+
+.DesignProcess .panel-header {
+  background-color: #4141D9;
+}
+
+.CaseStudy {
+}
+
+.CaseStudy .panel-header {
+  background-color: #E21A6B;
+}
+
+.CaseStudy .panel-header .download-button{
+  background-color: #fff;
+  border: 1px solid #E21A6B;
+  color: #E21A6B;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.875em;
+  letter-spacing: 0.0625em;
+  padding: 1em 2em;
+  margin: 0.75em;
+}
+
+.CaseStudy .panel-header .download-button:hover{
+  background-color: #E21A6B;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.CaseStudy .processBlocksContainer {
+  height: 38em;
+  overflow: auto;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.CaseStudy .processBlocksContainer img{
+  width: 100%;
+}
+
+.CaseStudy .processBlocksContainer h4{
+  font-weight: 600;
+  padding: 1em 1em 0.5em 1em;
+}
+
+.CaseStudy .process-block {
+  text-align: left;
+  padding: 0.75em 1.5em;
+  letter-spacing: 0em;
+}
+
+.CaseStudy .process-block p.content-title{
+  font-weight: 600;
+  font-size: 1em;
+  letter-spacing: 0em;
+}
+
+.CaseStudy .process-block p.content-description{
+  font-family: "Lora", Serif;
+  color: #8F8F8F;
+  letter-spacing: 0.03em;
+}
+
+/**** INFO MODAL ****/
+
+.info-content {
+  padding: 2em;
+  color: #6A6B6B;
+}
+
+.info-content img {
+  width: 100%;
+  padding: 1em;
+}
+
+.info-content p {
+  font-size: 1em;
+  padding: 1em;
+  letter-spacing: 0.0625em;
+  font-weight: 300;
+}
+
+.modal-footer .modal-link {
+  background-color: #fff;
+  color: #E21A6B;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.875em;
+  letter-spacing: 0.0625em;
+  border:1px solid #fff;
+}
+
+.modal-footer .modal-link:hover {
+  background-color: #E21A6B;
+  border:1px solid #E21A6B;
+  color: #fff;
+
+}
