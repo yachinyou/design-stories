@@ -8,6 +8,7 @@ class ProcessBlock extends Component {
     super(props);
 
     this.handleInfoClick = this.handleInfoClick.bind(this);
+  
   }
 
   handleInfoClick(e){
@@ -15,9 +16,12 @@ class ProcessBlock extends Component {
   }
 
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     let item = this.props.item;
     let index = this.props.index;
+/*     console.log('****************');
+    console.log(index);
+    console.log('****************'); */
     return (
       <Draggable
           key={item.id}
@@ -34,7 +38,7 @@ class ProcessBlock extends Component {
                         <a href="#" onClick={this.handleInfoClick}><img src={InfoIcon} /></a>
                       </div>
                   </div>
-                  <InfoModal ref={info => this.infoWindow = info}/>
+                  <InfoModal ref={info => this.infoWindow = info} data={item}/>
               </div>
           )}
       </Draggable>

@@ -9,10 +9,12 @@ import Hero from "./Components/Hero";
 import HelperText from "./Components/HelperText";
 import Footer from "./Components/Footer";
 
+//import update from 'react-addons-update';
+
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
+  const [removed] = result.splice(startIndex, 0);
   result.splice(endIndex, 0, removed);
 
   return result;
@@ -55,6 +57,7 @@ class App extends Component {
 
   componentWillMount(){
     this.setState({ researchProcessBlocks: [
+     
       {
         id: 0,
         title: "Block 1",
@@ -66,7 +69,9 @@ class App extends Component {
         title: "Block 2",
         contentTitle: "Process 2",
         content: "Blah blah blah 2"
-      }
+      },
+     
+
     ]});
 
     this.setState({ designProcessBlocks: [
@@ -109,7 +114,13 @@ class App extends Component {
       return;
     }
 
+
+
+    
+
     if (source.droppableId === destination.droppableId) {
+     
+
       const items = reorder(
         this.getList(source.droppableId),
         source.index,
@@ -123,13 +134,18 @@ class App extends Component {
         this.setState({ researchProcessBlocks: items });
       }
     } else {
+
+
       const result = move(
         this.getList(source.droppableId),
         this.getList(destination.droppableId),
         source,
         destination
       );
-
+      console.log('**********');
+      console.log(result.researchAndMethod.length);
+      
+      console.log('**********');
       this.setState({
         researchProcessBlocks: result.researchAndMethod,
         designProcessBlocks: result.designProcess
@@ -142,6 +158,24 @@ class App extends Component {
 }
 
   render() {
+      
+        if(this.state.researchProcessBlocks == '')
+        {
+          
+          this.setState({
+            researchProcessBlocks:[ {
+             id:7,
+              title:"Empty Block"
+            }]
+       });
+          
+        }else if(this.state.researchProcessBlocks != '')
+        {
+         
+         
+        }
+
+
     return (
       <div className="App">
         <NavBar />
