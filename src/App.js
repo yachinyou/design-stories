@@ -7,6 +7,7 @@ import CaseStudy from './Components/CaseStudy';
 import NavBar from "./Components/NavBar";
 import Hero from "./Components/Hero";
 import HelperText from "./Components/HelperText";
+import Footer from "./Components/Footer";
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
@@ -157,6 +158,7 @@ class App extends Component {
             </div>
           </div>
         </div>  
+        <Footer />
       </div>
     );
   }

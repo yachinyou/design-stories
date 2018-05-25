@@ -284,5 +284,132 @@
   background-color: #E21A6B;
   border:1px solid #E21A6B;
   color: #fff;
-
 }
+
+/**** DOWNLOAD MODAL ****/
+
+.download-modal{
+  text-align: center;
+}
+
+.download-modal .profile-image {
+  width: 6em;
+  height: 6em;
+  margin-top: 1em;
+}
+
+.download-modal .greeting h5{
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.25em;
+  letter-spacing: 0.03em;
+  padding: 0.5em;
+}
+
+.download-modal .greeting p{
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.75em;
+  letter-spacing: 0.03em;
+  color: #999;
+}
+
+
+.download-modal p.small-print{
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75em;
+  color: #999;
+  line-height: 1.5em;
+  padding-top: 0.5em;
+  text-align: left;
+}
+
+input#feedback::placeholder {
+  font-family: "Open Sans", sans-serif;
+  color: #999;
+}
+
+input#email::placeholder {
+  font-family: "Open Sans", sans-serif;
+  color: #999;
+}
+
+.download-modal .modal-download-button{
+  background-color: #E21A6B;
+  border: 1px solid #E21A6B;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.875em;
+  letter-spacing: 0.125em;
+  padding: 1em 2em 1em 2em;
+}
+
+.download-modal .modal-download-button:hover{
+  background-color: #fff;
+  color: #E21A6B;
+  border: 1px solid #E21A6B;
+}
+
+.footer {
+  background-color: #333;
+  padding: 2em 2em 4em 2em;
+  color: #fff;
+  text-align: center;
+}
+
+.email-signup-section p{
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  padding-bottom: 0.5em;
+}
+
+.email-signup-form-col {
+  margin: 0 auto;
+}
+
+.email-signup-form-col Button{
+  background-color: #E21A6B;
+  border: 1px solid #E21A6B;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.875em;
+  letter-spacing: 0.125em;
+  padding: 1em 2em 1em 2em;
+}
+
+.email-signup-form-col Button:hover{
+  background-color: #fff;
+  border: 1px solid #E21A6B;
+  color: #E21A6B;
+}
+
+input#resources-email-signup::placeholder {
+  font-family: "Open Sans", sans-serif;
+  color: #999;
+  font-size: 0.75em;
+}
+
+.social-media-link {
+  display: inline-block;
+  margin: 3em 1em 1em 1em;
+}
+
+.social-media-link img{
+width: 2em;
+height: 2em;
+}
+
+.social-media-link a{
+  opacity: 0.6;
+  }
+
+  .social-media-link a:hover{
+    opacity: 1;
+    }
+
+
