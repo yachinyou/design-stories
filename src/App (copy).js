@@ -150,7 +150,8 @@ class App extends Component {
      {
         for(var i=0; i < result.researchAndMethod.length; i++) {
           if(this.state.researchProcessBlocks[i].id == "7"){
-            if(this.state.researchProcessBlocks.splice(i,1)){
+
+              if(this.state.researchProcessBlocks.splice(i,1)){
                 this.setState({
                   researchProcessBlocks:this.state.researchProcessBlocks
                 });
@@ -185,24 +186,39 @@ class App extends Component {
   }
 
 
+
+
+
+
   scrollToAppArea = () => {
     document.getElementById('app-area').scrollIntoView();
 }
 
-
   render() {
       
         if(this.state.researchProcessBlocks == '')
-        {this.setState({
-                     researchProcessBlocks:[{ id:7,  title:"Empty Block",  }]
+        {
+          
+          this.setState({
+                     researchProcessBlocks:[{
+                                        id:7,
+                                       title:"Empty Block",
+                                      }]
                        });
         }
-        if(this.state.designProcessBlocks == '')
+
+         if(this.state.designProcessBlocks == '')
         {
-          this.setState({
-              designProcessBlocks:[ { id:8, title:"Empty Block" }]
-                       });
-         }
+          
+            this.setState({
+              designProcessBlocks:[ {
+                           id:8,
+                           title:"Empty Block"
+            }]
+       });
+         
+         
+        }
 
 
     return (

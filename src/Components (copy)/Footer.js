@@ -6,11 +6,6 @@ import TwitterIcon from "../Images/twitter-icon.png";
 import MediumIcon from "../Images/medium-icon.png";
 import DribbbleIcon from "../Images/dribbble-icon.png";
 
-import ReactGoogleSheetConnector from "react-google-sheet-connector"; //for save data in google sheet
-
-
-
-
 // const style = {
 //     margin: "0 auto"
 // }
@@ -21,20 +16,6 @@ const inputStyle = {
 
 const buttonStyle = {
     width: "100%",
-}
-
-
-
-function saveData() {
-    alert("hello");
-    <ReactGoogleSheetConnector clientid="215782928421-ag6i2qp3dpqdts9015fld19e24jtr621.apps.googleusercontent.com"
-    apiKey="AIzaSyBluGOCqiZ8k3YWstYoTaGGGtE1W0_nZMw"
-    spreadsheetId="1"
-    spinner={ <div className="loading-spinner"/> } >
-    <div>
-    	This content will be rendered once the data has been fetched from the spreadsheet.
-    </div>
-</ReactGoogleSheetConnector>
 }
 
 const footer = () => {
@@ -52,7 +33,7 @@ const footer = () => {
                          </FormGroup>
                          </Col>
                          <Col className="email-signup-form-col" sm={4}>
-                            <Button style={buttonStyle}  onClick={() => saveData()}>sign up</Button>
+                            <Button style={buttonStyle}>sign up</Button>
                          </Col>
                      </Form>
                      <div className="social-media-link"><a href="#"><img src={FacebookIcon} alt="facebook icon"/></a></div>

@@ -20,46 +20,28 @@ class ProcessBlock extends Component {
     let item = this.props.item;
     let index = this.props.index;
 
-    console.log('**************');
-    console.log(item);
-    console.log('**************');
-   
-    const id = item.id;
-  
-
     return (
- 
       <Draggable
           key={item.id}
           draggableId={item.id}
-          index={index}
-       
-          
-          >
-          
+          index={index}>
+          console.log(index);
           {(provided, snapshot) => (
               <div
-             
                   ref={provided.innerRef}
                   {...provided.draggableProps}
                   {...provided.dragHandleProps}>
-                  
-                
-                      <div className={item.title === "Empty Block"? "test" :'draggable'} style={item.title === "Empty Block" ? {'visibility': 'hidden'} : {}}>
-                          <div className="draggable-title">{item.title}</div>
-                          <div className="draggable-actions float-right">
-                            <a href="#" onClick={this.handleInfoClick}><img src={InfoIcon} /></a>
-                          </div>
+                  <div className="draggable">
+                      <div className="draggable-title">{item.title}</div>
+                      <div className="draggable-actions float-right">
+                        <a href="#" onClick={this.handleInfoClick}><img src={InfoIcon} /></a>
                       </div>
-                   
-                  
+                  </div>
                   <InfoModal ref={info => this.infoWindow = info} data={item}/>
-             
               </div>
           )}
       </Draggable>
     );
-  
   }
 }
 
