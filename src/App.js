@@ -11,6 +11,9 @@ import Footer from "./Components/Footer";
 
 import update from 'react-addons-update';
 
+
+import Demo from "./Components/Demo";
+
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -24,17 +27,27 @@ const reorder = (list, startIndex, endIndex) => {
 * Moves an item from one list to another list.
 */
 const move = (source, destination, droppableSource, droppableDestination) => {
+
   const sourceClone = Array.from(source);
   const destClone = Array.from(destination);
   const [removed] = sourceClone.splice(droppableSource.index, 1);
+  const d =destClone.splice(droppableDestination.index, 0, removed);
 
-  destClone.splice(droppableDestination.index, 0, removed);
+  console.log('***************');
+  console.log(sourceClone);
+  console.log(destClone);
+  console.log(removed);
+  console.log(d);
+  console.log('***************');
+
 
   const result = {};
+
   result[droppableSource.droppableId] = sourceClone;
   result[droppableDestination.droppableId] = destClone;
 
   return result;
+
 };
 
 class App extends Component {
@@ -107,22 +120,25 @@ class App extends Component {
   }
 
   onDragEnd(result){
+
     const { source, destination } = result;
+
+
+  
 
     // dropped outside the list
     if (!destination) {
       return;
     }
 
-    if (source.droppableId === destination.droppableId) {
-     
+;
 
-      const items = reorder(
+    if (source.droppableId === destination.droppableId) {
+     const items = reorder(
         this.getList(source.droppableId),
         source.index,
         destination.index
       );
-
 
       if (source.droppableId === 'designProcess') {
         this.setState({ designProcessBlocks: items });
@@ -130,8 +146,7 @@ class App extends Component {
         this.setState({ researchProcessBlocks: items });
       }
     } else {
-
-
+      
       const result = move(
         this.getList(source.droppableId),
         this.getList(destination.droppableId),
@@ -139,11 +154,14 @@ class App extends Component {
         destination
       );
 
+     
       this.setState({
         researchProcessBlocks: result.researchAndMethod,
         designProcessBlocks: result.designProcess
       });
+      
 
+    
 
 
      if(result.researchAndMethod.length == '2')
@@ -159,7 +177,7 @@ class App extends Component {
             }
         }
       }
-      //console.log(result.designProcess[0]);
+    
        if(result.designProcess.length == '2' &&  result.designProcess[0] !== '')
       {
        
@@ -167,9 +185,7 @@ class App extends Component {
            if(this.state.designProcessBlocks[i].id == "8"){
     
                if(this.state.designProcessBlocks.splice(i,1)){
-                 //console.log('***************');
-                 //console.log(this.state.designProcessBlocks);
-                 //console.log('***************');
+                 
                  this.setState({
                   designProcessBlocks:this.state.designProcessBlocks
                  });
@@ -221,6 +237,7 @@ class App extends Component {
             </div>
           </div>
         </div>  
+       
         <Footer />
       </div>
     );

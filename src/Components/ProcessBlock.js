@@ -20,10 +20,7 @@ class ProcessBlock extends Component {
     let item = this.props.item;
     let index = this.props.index;
 
-    console.log('**************');
-    console.log(item);
-    console.log('**************');
-   
+
     const id = item.id;
   
 

@@ -368,7 +368,12 @@ input#email::placeholder {
 }
 
 .email-signup-form-col {
-  margin: 0 auto;
+ /* margin: 0 auto;*/
+   display: inline-block; /* New Added */
+    max-width: 110px;
+    top: -7px;
+    position: relative;
+
 }
 
 .email-signup-form-col Button{
