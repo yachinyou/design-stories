@@ -5,16 +5,23 @@ import ProfileImage from "../Images/yachin_profile.png";
 
 
 import GithubCorner from "react-github-corner";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
+import MailchimpSubscribe from "react-mailchimp-subscribe"; //For saving email to mailchimp list
+
+import { Document,Page } from 'react-pdf' //For download template
+import CaseStudy from './CaseStudy';
+
+import * as jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
 
 class DownloadModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
-    };
-
-    this.toggle = this.toggle.bind(this);
+      modal: false,
+      feedback:'Thank you for your feedback...'
+     
+    }; this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
@@ -22,8 +29,6 @@ class DownloadModal extends Component {
       modal: !this.state.modal
     });
   }
-
-  
 
 
 
@@ -41,17 +46,23 @@ const CustomForm = ({ status, message, onValidated }) => {
       EMAIL: email.value,     
     });
 
-  
+
+
+   
   return (
     <div
-      style={{
-       // background: "#efefef",
+style={{
         borderRadius: 0,
         padding: 10,
       
       }}
     >
-      {status === "sending" && <div style={{ color: "white" }}>Sending...</div>}
+      {status === "sending" && (
+      <div>
+      <div style={{ color: "black" }}>Sending...</div>  
+       {setTimeout(function(){ window.print() }, 3000)}
+       </div>
+      )}
       {status === "error" && (
         <div
           style={{ color: "red" }}
@@ -60,40 +71,30 @@ const CustomForm = ({ status, message, onValidated }) => {
       )}
       {status === "success" && (
         <div
-          style={{ color: "green" }}
-          dangerouslySetInnerHTML={{ __html: message }}
+          style={{ color: "green" }} 
+            dangerouslySetInnerHTML={{ __html: "Thank you for Submitting feedback, Please subscribe by clicking on the link sent you on email." }} 
+         
         />
       )}
-     
-            <FormGroup>
-              <Input type="text" name="feedback" id="feedback" placeholder="It'd be better if..." />
-            </FormGroup>
+     <FormGroup>
+          <Input type="text" name="feedback" id="feedback" placeholder="It'd be better if..." />
+    </FormGroup>
            
-            <FormGroup>
+   <FormGroup>
       <Label for="exampleEmail" hidden>Email</Label>
-
-      <input style={{ fontSize: "1.0em", padding: 5,borderRadius: "9px",width:"100%" }} ref={node => (email = node)} type="email" name="email" id="resources-email-signup"  placeholder="Your Email"
+        <input style={{ fontSize: "1.0em", padding: 5,borderRadius: "9px",width:"100%" }} ref={node => (email = node)} type="email" name="email" id="resources-email-signup"  placeholder="Your Email"
       />
-      </FormGroup>
+  </FormGroup>
+ <button size="lg" className="modal-download-button float-right" onClick={submit}> SUBMIT </button>
 
-
-       <button size="lg" className="modal-download-button float-right" onClick={submit}> SUBMIT </button>
-     
-   
-     
-      
-    
-    </div>
+       </div>
+       
   );
 };
 
 
-
-
+    const url =   "https://designstories.us18.list-manage.com/subscribe/post?u=000b3640f9f8a33cfa84dfc79&amp;id=2cad738744";
   
-    
-
-    const url = "https://techinfini.us18.list-manage.com/subscribe/post?u=799c58c40d5fb675e52137834&amp;id=8bac0e0bb6";
 
     return (
       <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
@@ -114,6 +115,8 @@ const CustomForm = ({ status, message, onValidated }) => {
             />
           )} /> 
 
+          
+
          {/*  <Form>
             <FormGroup>
               <Input type="text" name="feedback" id="feedback" placeholder="It'd be better if..." />
@@ -126,6 +129,8 @@ const CustomForm = ({ status, message, onValidated }) => {
           </Form> */}
         </ModalBody>
       </Modal>
+
+  
     );
   }
 }

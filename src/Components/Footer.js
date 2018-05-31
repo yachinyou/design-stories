@@ -91,8 +91,7 @@ const footer = ({ status, message, onValidated }) => {
       onValidated({
         EMAIL: email.value,
       });
-      const url =
-      "https://techinfini.us18.list-manage.com/subscribe/post?u=799c58c40d5fb675e52137834&amp;id=9fd5a09cbd";
+      const url ="https://designstories.us18.list-manage.com/subscribe/post?u=000b3640f9f8a33cfa84dfc79&amp;id=88485a5b69";
   
     return (
         <div className="footer">
