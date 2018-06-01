@@ -23,6 +23,8 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
+
+
 /**
 * Moves an item from one list to another list.
 */
@@ -91,26 +93,26 @@ class App extends Component {
       {
         id: 3,
         title: "Block 3",
-        contentTitle: "Process 3",
-        content: "Blah blah blah 3"
+        contentTitle: "Design Case",
+        content: "Describe what the destgu project IS about In a short paragraph Outhue the product."
       },
       {
         id: 4,
         title: "Block 4",
-        contentTitle: "Process 4",
-        content: "Blah blah blah 4"
+        contentTitle: "Problem Statement",
+        content: "A problem statement is a concise description of an issue to be addressed or a condition to be improved upon. ... The first condition of solving a problem is understanding the problem, which can be done by way of a problem statement."
       },
       {
         id: 5,
         title: "Block 5",
-        contentTitle: "Process 5",
-        content: "Blah blah blah 5"
+        contentTitle: "Current Solutions",
+        content: "Current Solutions brings OEM Power Sources to the manufacturers of the Southeastern United States. Via exclusive representation, we offer expert product support and technical assistance to the benefit of all parties. We support our customer’s needs with years of market knowledge, technical expertise, and integrity. We believe that professional manufacturers’ representatives are the best way to bring a product to the OEM market."
       },
       {
         id: 6,
         title: "Block 6",
-        contentTitle: "Process 6",
-        content: "Blah blah blah 6"
+        contentTitle: "User Interviews",
+        content: "User interviews can be a great way to extract information from users for user experience understanding, usability understanding and ideation. They are cheap and easy to conduct and can be readily conducted by anyone who can ask questions and record the answers."
       }
     ]})
   }
@@ -205,8 +207,9 @@ class App extends Component {
     document.getElementById('app-area').scrollIntoView();
 }
 
-
   render() {
+
+   
       
         if(this.state.researchProcessBlocks == '')
         {this.setState({
@@ -219,6 +222,7 @@ class App extends Component {
               designProcessBlocks:[ { id:8, title:"Empty Block" }]
                        });
          }
+
 
 
     return (

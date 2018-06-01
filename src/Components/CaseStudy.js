@@ -31,10 +31,10 @@ class CaseStudy extends Component {
     mywindow.close(); */
  
 /* let WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
-WinPrint.document.write('<link rel="stylesheet" href="http://localhost:3000/App.css" type="text/css" media="all" />');
+//WinPrint.document.write('<link rel="stylesheet" href="http://localhost:3000/App.css" type="text/css" media="all" />');
 WinPrint.document.write(input.innerHTML);
-WinPrint.document.close();
-WinPrint.focus();
+//WinPrint.document.close();
+//WinPrint.focus();
 WinPrint.print();  */
 //window.print();
 

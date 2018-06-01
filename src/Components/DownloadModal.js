@@ -30,8 +30,6 @@ class DownloadModal extends Component {
     });
   }
 
-
-
   render() {
     console.log(this.props);
     let item = this.props.item;
@@ -46,8 +44,6 @@ const CustomForm = ({ status, message, onValidated }) => {
       EMAIL: email.value,     
     });
 
-
-
    
   return (
     <div
@@ -60,7 +56,8 @@ style={{
       {status === "sending" && (
       <div>
       <div style={{ color: "black" }}>Sending...</div>  
-       {setTimeout(function(){ window.print() }, 3000)}
+     {/*  {window.location.href= Url} */}
+      {setTimeout(function(){ window.print() }, 3000)}  
        </div>
       )}
       {status === "error" && (
@@ -72,7 +69,7 @@ style={{
       {status === "success" && (
         <div
           style={{ color: "green" }} 
-            dangerouslySetInnerHTML={{ __html: "Thank you for Submitting feedback, Please subscribe by clicking on the link sent you on email." }} 
+            dangerouslySetInnerHTML={{ __html: "Thank you for downloading the template." }} 
          
         />
       )}
