@@ -17,14 +17,11 @@ import $ from "jquery";
 
 
 import * as jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
-
-import domtoimage from 'dom-to-image';
-
-
-import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
+//import html2canvas from 'html2canvas';
+//import domtoimage from 'dom-to-image';
+//import pdfMake from "pdfmake/build/pdfmake";
+//import pdfFonts from "pdfmake/build/vfs_fonts";
+//pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 
 class DownloadModal extends Component {
@@ -43,14 +40,9 @@ class DownloadModal extends Component {
     });
   }
   
-
-
-
   render() {
     console.log(this.props);
     let item = this.props.item;
-
-
 
 
  let processBlocks;
@@ -92,12 +84,10 @@ style={{
       <div>
       <div style={{ color: "black" }}>Sending...</div>  
     
-    {/*   {setTimeout(function(){ window.print() }, 3000)}   */}
    { 
-     setTimeout(function(){
 
-      
-        
+     setTimeout(function(){
+  
       const input = document.getElementById('contWrapper');
 
       var doc = new jsPDF('p','pt','a4');
@@ -116,24 +106,12 @@ style={{
           doc.fromHTML($(input).get(0),10,10, {
             
               'width' : 500,
-              //'height' : doc.internal.pageSize.height,
               'elementHandlers': specialElementHandlers,
               'align': 'center',
               'margin': 500,
              
           }, function(bla) {   doc.save('saveInCallback.pdf');
         });
-         
-      
-/*       html2canvas(document.getElementById('divToPrint'))
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/jpeg');
-         const pdf = new jsPDF();
-        pdf.addImage(imgData, 'JPEG', 0, 0);
-        // pdf.output('dataurlnewwindow');
-       pdf.save("download.pdf");
-      })  */
-        
     
       }, 2000)
     }

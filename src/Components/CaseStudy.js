@@ -5,20 +5,20 @@ import SampleCoverImage from "../Images/sample_cover_image.jpg"
 
 import * as jsPDF from 'jspdf';
 
-import html2canvas from 'html2canvas';
-
-import domtoimage from 'dom-to-image';
+//import html2canvas from 'html2canvas';
+//import domtoimage from 'dom-to-image';
+//import * as saveAs from 'file-saver';
+//import { saveAs } from 'file-saver';
+//import * as rasterizeHTML from 'rasterizehtml';
 
 import '../App.css';
 
 import $ from "jquery";
 
-import * as rasterizeHTML from 'rasterizehtml';
+
 
 import { Document,Page } from 'react-pdf' 
 
-//import * as saveAs from 'file-saver';
-import { saveAs } from 'file-saver';
 
 class CaseStudy extends Component {
   constructor(props) {
@@ -39,95 +39,7 @@ class CaseStudy extends Component {
 
 
   handleDownloadClick(e){
-    
-    const input = document.getElementById('divToPrint');
-/* 
-var doc = new jsPDF('p','pt','a4');
-var specialElementHandlers = {
-  '#editor': function (element, renderer) {
-   return true;
-}
-};
 
-var html=$(input).html();
-
-doc.setFontSize(12)
-    //doc.text(10,20,'Design Stories');
-
-    //doc.text(20,80,'Your Case Study Template');
-    doc.fromHTML($(input).get(0),10,10, {
-      
-        'width' : 500,
-        //'height' : doc.internal.pageSize.height,
-        'elementHandlers': specialElementHandlers,
-        'align': 'center',
-        'margin': 500,
-       
-    }, function(bla) {   doc.save('saveInCallback.pdf');
-  }); */
-   
-
-  
-
-
-  //  const node = document.getElementById('divToPrint');
-
-  
-  /*   domtoimage.toBlob(document.getElementById('divToPrint'))
-    .then(function (blob) {
-        window.saveAs(blob, 'my-node.png');
-    });
- */
-
-/*      domtoimage.toJpeg(document.getElementById('divToPrint'), { quality: 0.95 })
-    .then(function (dataUrl) {
-        var link = document.createElement('a');
-        link.download = 'my-image-name.jpeg';
-        link.href = dataUrl;
-        link.click();
-    }); 
-     */
-
-/*     domtoimage.toPng(input)
-    .then(function (dataUrl) {
-        var img = new Image();
-        img.src = dataUrl;
-        document.body.appendChild(img);
-    })
-    .catch(function (error) {
-        console.error('oops, something went wrong!', error);
-    }); */
-
-/* 
-    let mywindow = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
-    mywindow.document.write('<html><head><title></title>');
-    mywindow.document.write('<link rel="stylesheet" href="../src/App.css" type="text/css" media="print" />');
-    mywindow.document.write('</head><body >');
-    mywindow.document.write(input);
-    mywindow.document.write('</body></html>');
-    
-    setTimeout(function(){mywindow.print();},1000);
-    mywindow.close(); */
- 
-/* let WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
-//WinPrint.document.write('<link rel="stylesheet" href="http://localhost:3000/App.css" type="text/css" media="all" />');
-WinPrint.document.write(input.innerHTML);
-//WinPrint.document.close();
-//WinPrint.focus();
-WinPrint.print();  */
-//window.print();
-
-/*     html2canvas(input)
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        
-        const pdf = new jsPDF();
-        pdf.addImage(imgData, 'JPEG', 0, 0);
-        // pdf.output('dataurlnewwindow');
-        window.print();
-        pdf.save("download.pdf");
-      }) ; 
- */
     this.downloadModal.toggle();
   }
 
