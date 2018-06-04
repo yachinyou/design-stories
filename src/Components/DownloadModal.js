@@ -91,6 +91,9 @@ style={{
       const input = document.getElementById('contWrapper');
 
       var doc = new jsPDF('p','pt','a4');
+
+
+
       var specialElementHandlers = {
         '#editor': function (element, renderer) {
          return true;
@@ -98,25 +101,31 @@ style={{
       };
       
       var html=$(input).html();
+      doc.setFont("helvetica");
+      doc.setFontType("bold");
       
       doc.setFontSize(12)
           //doc.text(10,20,'Design Stories');
-      
-          //doc.text(20,80,'Your Case Study Template');
-          doc.fromHTML($(input).get(0),10,10, {
-            
-              'width' : 500,
-              'elementHandlers': specialElementHandlers,
-              'align': 'center',
-              'margin': 500,
-             
-          }, function(bla) {   doc.save('saveInCallback.pdf');
-        });
+        //doc.text(20,80,'Your Case Study Template');
+        var margins = {
+          top: 30,
+          bottom: 60,
+          left: 40,
+          width: 522
+      };
+
+      var source = $(input).get(0);
+     
+      doc.fromHTML(
+      source, // HTML string or DOM elem ref.
+      margins.left, // x coord
+      margins.top, { // y coord
+          'width': margins.width, // max width of content on PDF
+          'elementHandlers': specialElementHandlers
+      }, function(bla) {   doc.save('caseStudy.pdf')},margins);
     
       }, 2000)
     }
-     
-  
        </div>
       )}
 
