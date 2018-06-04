@@ -4,6 +4,9 @@ import { DragDropContext, Draggable } from 'react-beautiful-dnd';
 import ResearchAndMethodology from './Components/ResearchAndMethodology';
 import DesignProcess from './Components/DesignProcess';
 import CaseStudy from './Components/CaseStudy';
+
+import DownloadModal from './Components/DownloadModal';
+
 import NavBar from "./Components/NavBar";
 import Hero from "./Components/Hero";
 import HelperText from "./Components/HelperText";
@@ -106,13 +109,13 @@ class App extends Component {
         id: 5,
         title: "Block 5",
         contentTitle: "Current Solutions",
-        content: "Current Solutions brings OEM Power Sources to the manufacturers of the Southeastern United States. Via exclusive representation, we offer expert product support and technical assistance to the benefit of all parties. We support our customer’s needs with years of market knowledge, technical expertise, and integrity. We believe that professional manufacturers’ representatives are the best way to bring a product to the OEM market."
+        content: "Current Solutions brings OEM Power Sources to the manufacturers of the Southeastern United States."
       },
       {
         id: 6,
         title: "Block 6",
         contentTitle: "User Interviews",
-        content: "User interviews can be a great way to extract information from users for user experience understanding, usability understanding and ideation. They are cheap and easy to conduct and can be readily conducted by anyone who can ask questions and record the answers."
+        content: "User interviews can be a great way to extract information from users for user experience understanding."
       }
     ]})
   }
@@ -238,11 +241,13 @@ class App extends Component {
                 <DesignProcess processBlocks={this.state.designProcessBlocks} />
               </DragDropContext>
               <CaseStudy processBlocks={this.state.designProcessBlocks} />
+              <DownloadModal processBlocks={this.state.designProcessBlocks} />
             </div>
           </div>
         </div>  
        
         <Footer />
+        <Demo />
       
       </div>
     );

@@ -10,8 +10,21 @@ import MailchimpSubscribe from "react-mailchimp-subscribe"; //For saving email t
 import { Document,Page } from 'react-pdf' //For download template
 import CaseStudy from './CaseStudy';
 
+import  '../App.js';
+
+
+import $ from "jquery";
+
+
 import * as jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+
+import domtoimage from 'dom-to-image';
+
+
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 
 class DownloadModal extends Component {
@@ -29,10 +42,32 @@ class DownloadModal extends Component {
       modal: !this.state.modal
     });
   }
+  
+
+
 
   render() {
     console.log(this.props);
     let item = this.props.item;
+
+
+
+
+ let processBlocks;
+ if(this.props.processBlocks){
+   processBlocks = this.props.processBlocks.map((block, index) => {
+     return (
+       <div className="process-block">
+         <p className="content-title">
+           {block.contentTitle}
+         </p>
+         <p className="content-description">
+         {block.content}
+       </p>
+     </div>
+     )
+   })
+ }
 
 
 const CustomForm = ({ status, message, onValidated }) => {
@@ -56,10 +91,57 @@ style={{
       {status === "sending" && (
       <div>
       <div style={{ color: "black" }}>Sending...</div>  
-     {/*  {window.location.href= Url} */}
-      {setTimeout(function(){ window.print() }, 3000)}  
+    
+    {/*   {setTimeout(function(){ window.print() }, 3000)}   */}
+   { 
+     setTimeout(function(){
+
+      
+        
+      const input = document.getElementById('contWrapper');
+
+      var doc = new jsPDF('p','pt','a4');
+      var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+         return true;
+      }
+      };
+      
+      var html=$(input).html();
+      
+      doc.setFontSize(12)
+          //doc.text(10,20,'Design Stories');
+      
+          //doc.text(20,80,'Your Case Study Template');
+          doc.fromHTML($(input).get(0),10,10, {
+            
+              'width' : 500,
+              //'height' : doc.internal.pageSize.height,
+              'elementHandlers': specialElementHandlers,
+              'align': 'center',
+              'margin': 500,
+             
+          }, function(bla) {   doc.save('saveInCallback.pdf');
+        });
+         
+      
+/*       html2canvas(document.getElementById('divToPrint'))
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/jpeg');
+         const pdf = new jsPDF();
+        pdf.addImage(imgData, 'JPEG', 0, 0);
+        // pdf.output('dataurlnewwindow');
+       pdf.save("download.pdf");
+      })  */
+        
+    
+      }, 2000)
+    }
+     
+  
        </div>
       )}
+
       {status === "error" && (
         <div
           style={{ color: "red" }}

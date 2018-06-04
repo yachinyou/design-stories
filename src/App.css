@@ -217,6 +217,7 @@
   color: #fff;
 }
 
+
 .CaseStudy .processBlocksContainer {
   height: 38em;
   overflow: auto;
@@ -250,6 +251,15 @@
   color: #8F8F8F;
   letter-spacing: 0.03em;
 }
+
+
+
+/* .processBlocksContainer.showContainer {
+
+  overflow: unset;
+  height: auto;
+  display: block;
+} */
 
 /**** INFO MODAL ****/
 
@@ -416,5 +426,3 @@ height: 2em;
   .social-media-link a:hover{
     opacity: 1;
     }
-
-
