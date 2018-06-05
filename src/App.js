@@ -18,9 +18,9 @@ import update from 'react-addons-update';
 import Demo from "./Components/Demo";
 
 // a little function to help us with reordering the result
-const reorder = (list, startIndex, endIndex) => {
+  const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 0);
+  const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
 
   return result;
@@ -36,15 +36,7 @@ const move = (source, destination, droppableSource, droppableDestination) => {
   const sourceClone = Array.from(source);
   const destClone = Array.from(destination);
   const [removed] = sourceClone.splice(droppableSource.index, 1);
-  const d =destClone.splice(droppableDestination.index, 0, removed);
-
-  console.log('***************');
-  console.log(sourceClone);
-  console.log(destClone);
-  console.log(removed);
-  console.log(d);
-  console.log('***************');
-
+  destClone.splice(droppableDestination.index, 0, removed);
 
   const result = {};
 
@@ -128,18 +120,15 @@ class App extends Component {
 
     const { source, destination } = result;
 
-
-  
-
     // dropped outside the list
     if (!destination) {
       return;
     }
 
-;
+   
 
     if (source.droppableId === destination.droppableId) {
-     const items = reorder(
+      const items = reorder(
         this.getList(source.droppableId),
         source.index,
         destination.index
