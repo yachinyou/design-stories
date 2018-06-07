@@ -236,7 +236,7 @@ class App extends Component {
         </div>  
        
         <Footer />
-        <Demo />
+       
       
       </div>
     );
