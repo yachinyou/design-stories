@@ -276,6 +276,22 @@
   color: #6A6B6B;
 }
 
+/* .info-header {
+  position: relative;
+  height: 14em;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  text-align: center;
+} */
+
+.info-content h2{
+  font-family: "Open Sans", sans-serif;
+  color: #E21A6B;
+  font-weight: 300;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  text-align: center;
+  padding: 3em 0 3em 0;
+}
+
 .info-content img {
   width: 100%;
   padding: 1em;
@@ -370,6 +386,10 @@ input#email::placeholder {
   background-color: #fff;
   color: #E21A6B;
   border: 1px solid #E21A6B;
+}
+
+p#download-message {
+  margin: 1em auto 2em auto;
 }
 
 .footer {

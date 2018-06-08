@@ -30,7 +30,7 @@ class InfoModal extends Component {
     return (
       <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
         <ModalBody className="info-content">
-          <img src={infoImage} />
+          <h2>{item.title}</h2>
           <p>{item.content}</p>
           <p><a href={item.exampleLink} target="_blank">{item.exampleText}</a></p>
         </ModalBody>

@@ -39,48 +39,10 @@ class DownloadModal extends Component {
       modal: !this.state.modal
     });
   }
-  
-  render() {
-    console.log(this.props);
-    let item = this.props.item;
 
-
- let processBlocks;
- if(this.props.processBlocks){
-   processBlocks = this.props.processBlocks.map((block, index) => {
-     return (
-       <div className="process-block">
-         <p className="content-title">
-           {block.contentTitle}
-         </p>
-         <p className="content-description">
-         {block.content}
-       </p>
-     </div>
-     )
-   })
- }
-
-
-const CustomForm = ({ status, message, onValidated }) => {
-  let email, name;
-  const submit = () =>
-    email &&
-    email.value.indexOf("@") > -1 &&
-    onValidated({
-      EMAIL: email.value,     
-    });
-
-   
-  return (
-    <div style={{
-        borderRadius: 0,
-        padding: 10,
-      }}>
-      {status === "sending" && (
-        <div>
-          <div style={{ color: "black" }}>Sending...</div>  
-          { setTimeout(function(){
+  downloadPDF() {
+    document.getElementById("download-message").innerHTML = "Creating your case study template ...";
+    setTimeout(function(){
   
       const input = document.getElementById('contWrapper');
 
@@ -97,8 +59,6 @@ const CustomForm = ({ status, message, onValidated }) => {
       doc.setFontType("bold");
       
       doc.setFontSize(12)
-          //doc.text(10,20,'Design Stories');
-        //doc.text(20,80,'Your Case Study Template');
         var margins = {
           top: 30,
           bottom: 60,
@@ -115,80 +75,47 @@ const CustomForm = ({ status, message, onValidated }) => {
           'width': margins.width, // max width of content on PDF
           'elementHandlers': specialElementHandlers
       }, function(bla) {   doc.save('caseStudy.pdf')},margins);
-    
+      document.getElementById("download-message").innerHTML = "Your template is downloaded!";
       }, 2000)
-    }
-       </div>
-      )}
-
-      {status === "error" && (
-        <div
-          style={{ color: "red" }}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-      {status === "success" && (
-        <div
-          style={{ color: "green" }} 
-            dangerouslySetInnerHTML={{ __html: "Thank you for downloading the template." }} 
-         
-        />
-      )}
-     <FormGroup>
-          <Input type="text" name="feedback" id="feedback" placeholder="It'd be better if..." />
-    </FormGroup>
-           
-   <FormGroup>
-      <Label for="exampleEmail" hidden>Email</Label>
-        <input style={{ fontSize: "1.0em", padding: 5,borderRadius: "9px",width:"100%" }} ref={node => (email = node)} type="email" name="email" id="resources-email-signup"  placeholder="Your Email"
-      />
-  </FormGroup>
- <button size="lg" className="modal-download-button float-right" onClick={submit}> SUBMIT </button>
-
-       </div>
-       
-  );
-};
-
-
-    const url =   "https://designstories.us18.list-manage.com/subscribe/post?u=000b3640f9f8a33cfa84dfc79&amp;id=2cad738744";
+  }
   
+  render() {
+    console.log(this.props);
 
+    let item = this.props.item;
+
+    let processBlocks;
+    if(this.props.processBlocks){
+      processBlocks = this.props.processBlocks.map((block, index) => {
+        return (
+          <div className="process-block">
+            <p className="content-title">
+              {block.contentTitle}
+            </p>
+            <p className="content-description">
+              {block.content}
+            </p>
+          </div>
+        )
+      })
+    }
+   
     return (
       <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
         <ModalBody className="download-modal">
           <img className="profile-image" src={ProfileImage} alt="yachin's profile image" />
           <div className="greeting">
             <h5>Howdy!</h5>
-            <p>I'm Yachin, UX designer and creator of this tool.<br /> <span className="bold black">What can be better about this tool?</span></p>
+            <p>I'm Yachin, UX designer and creator of this tool.<br /> <span className="bold black">Your feedback will help me improve this tool, please let me know what you think!</span></p>
+            <Button size="lg" className="modal-download-button" onClick={this.downloadPDF} >DOWNLOAD template</Button>
+            <p id="download-message"></p>
           </div>  
 
-           <MailchimpSubscribe
-          url={url}
-          render={({ subscribe, status, message }) => (
-            <CustomForm
-              status={status}
-              message={message}
-              onValidated={formData => subscribe(formData)}
-            />
-          )} /> 
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdeyGBdLrVGQr7SnNssPW3SZflKGku_86koT4FZ9WSbWxJ4Yg/viewform?embedded=true" width="400" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
-          
-
-         {/*  <Form>
-            <FormGroup>
-              <Input type="text" name="feedback" id="feedback" placeholder="It'd be better if..." />
-            </FormGroup>
-            <FormGroup>
-              <Input type="email" name="email" id="email" placeholder="Your email" />
-              <p className="small-print"><span className="black">I'd love to hear what you think about this tool.</span> Your email will be kept private.</p>
-            </FormGroup>
-            <Button size="lg" className="modal-download-button float-right" onclick="" >SUBMIT</Button>
-          </Form> */}
         </ModalBody>
       </Modal>
 
-  
     );
   }
 }
