@@ -73,26 +73,18 @@ const CustomForm = ({ status, message, onValidated }) => {
 
    
   return (
-    <div
-style={{
+    <div style={{
         borderRadius: 0,
         padding: 10,
-      
-      }}
-    >
+      }}>
       {status === "sending" && (
-      <div>
-      <div style={{ color: "black" }}>Sending...</div>  
-    
-   { 
-
-     setTimeout(function(){
+        <div>
+          <div style={{ color: "black" }}>Sending...</div>  
+          { setTimeout(function(){
   
       const input = document.getElementById('contWrapper');
 
       var doc = new jsPDF('p','pt','a4');
-
-
 
       var specialElementHandlers = {
         '#editor': function (element, renderer) {

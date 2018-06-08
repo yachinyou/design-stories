@@ -69,24 +69,6 @@ class App extends Component {
     this.setState({ researchProcessBlocks: [
      
       {
-        id: 0,
-        title: "Project Summary",
-        contentTitle: "Project Summary",
-        content: "Describe what the design project is about in a short paragraph. \n\nYou can outline the product you’re designing for, your personal experience that inspired the project, or a client’s need to innovate or improve on the current design. \n\nIf you’re solving a problem in a particular industry, you can include some statistics to illustrate its importance.",
-        contentInTemplate: "Describe what the design project is about in a short paragraph. You can outline the product you're designing for, your personal experience that inspired the project, or a client's need to improve on the current design.",
-        exampleText: "Example: Parallel Chat — UI/UX case study of a new chat interaction by Daniel Korpai",
-        exampleLink: "https://medium.muz.li/parallel-chat-ui-ux-case-study-of-a-new-chat-interaction-7ea6779f884b"
-      },
-      {
-        id: 1,
-        title: "Problem Statement",
-        contentTitle: "Problem Statement",
-        content: "Broadly describe the current problems you have observed in users or from your personal experience.\n\nWhat is the expected outcome that the users are trying to achieve? Does the current solution take a long time? Is it very costly? \n\nOr maybe it requires the users to go through an arduous process? If you have observed the problem from usability testing or data analysis, you can briefly describe the research methods used and the findings.",
-        contentInTemplate: "Describe the current problems you have observed in users or from your personal experience. If you have observed the problem from usability testing or data analysis, you can briefly describe the research methods used and the findings.",
-        exampleText: "Example: Gamification of timesheet entry — UX Mobile App Case Study by Sid from HelloFello Studio",
-        exampleLink: "https://medium.muz.li/gamification-of-timesheet-entry-mobile-app-ux-case-study-934c585d7945"
-      },
-      {
         id: 2,
         title: "Current Solutions",
         contentTitle: "Current Solutions",
@@ -94,27 +76,6 @@ class App extends Component {
         contentInTemplate: "Describe how users today are getting the job done despite the problems you've observed. Outlining the current solutions helps the readers compare and understand the value of the design solutions.",
         exampleText: "Example: UI/UX Case Study : Designing a better cinema experience by Ariel Verber",
         exampleLink: "https://medium.muz.li/ui-ux-case-study-designing-a-better-cinema-experience-29abc7cfb94f"
-      }
-    ]});
-
-    this.setState({ designProcessBlocks: [
-      {
-        id: 3,
-        title: "Pain Points",
-        contentTitle: "Pain Points",
-        content: "Outline 3 - 5 specific pain points that users encounter while using a product or getting a job done.\n\nYou can go into more details around each pain point, perhaps describing an interaction that is hard to find, cumbersome or restrictive.\n\nIf you have done usability testing, competitive research or dug through customer feedbacks to distill these pain points, include photos, screenshots or customer quotes.",
-        contentInTemplate: "Outline 3 - 5 specific pain points that users encounter while using a product or getting a job done. If you have done usability testing, competitive research or dug through customer feedbacks to distill these pain points, include photos, screenshots or customer quotes.",
-        exampleText: "Example: Parallel Chat — UI/UX case study of a new chat interaction by Daniel Korpai",
-        exampleLink: "https://medium.muz.li/parallel-chat-ui-ux-case-study-of-a-new-chat-interaction-7ea6779f884b"
-      },
-      {
-        id: 4,
-        title: "Design Solutions",
-        contentTitle: "Design Solutions",
-        content: "List 3 - 5 design solutions that you have come up with in regards to the particular pain points that you have discovered.\n\nDescribe the desired outcome of these design solutions briefly. You can list them in order of priority, and if you have done analysis with a prioritization matrix, include the workshop photo or a diagram.",
-        contentInTemplate: "List 3 - 5 design solutions that you have come up with in regards to the particular pain points that you have discovered. Describe the desired outcome of these design solutions briefly. If you have done analysis with a prioritization matrix, include the workshop photo or a diagram.",
-        exampleText: "Example: Foursquare: A UX case study by Namika Hamasaki",
-        exampleLink: "https://medium.com/haiiro-io/foursquare-a-ux-case-study-f606d4757d9b"
       },
       {
         id: 5,
@@ -126,15 +87,6 @@ class App extends Component {
         exampleLink: "https://uxplanet.org/my-heart-check-a-ux-case-study-7f5723a7d5b5"
       },
       {
-        id: 6,
-        title: "User Interviews",
-        contentTitle: "User Interviews",
-        content: "Talking to users out in the field is essential for user experience research. You can gain valuable learnings from talking to even just a handful of users.\n\nDepending on your outreach method, include a photo of the set up takes the readers with you on the journey of discovering usability insights. For example, perhaps you staked out in front of a coffee shop or emailed a list of customers to schedule phone calls, include a photo of the process.\n\nBriefly describe the questions that you asked the users or the task that you asked them to complete.",
-        contentInTemplate: "Depending on your outreach method, include a photo of the set up takes the readers with you on the journey of discovering usability insights. For example, perhaps you staked out in front of a coffee shop or emailed a list of customers to schedule phone calls, include a photo of the process. Briefly describe the questions that you asked the users or the task that you asked them to complete.",
-        exampleText: "Example: Finding My Way Through The Amazon by Agnes Kim",
-        exampleLink: "https://uxdesign.cc/finding-my-way-through-the-amazon-c176509bfc23"
-      },
-      {
         id: 7,
         title: "Usability Testing",
         contentTitle: "Usability Testing",
@@ -142,15 +94,6 @@ class App extends Component {
         contentInTemplate: "Whether you are asking your friends or colleagues, approaching strangers in a park or recording videos from remote usability testing sessions, include a photo of your set up or take a screenshot of the responses you got. Describe briefly who the target users are, and the tasks that you asked them to complete.",
         exampleText: "Example: Guerrilla Usability Testing the New Experiences Feature on Airbnb’s iOS App by Irene Kuo",
         exampleLink: "https://medium.freecodecamp.org/airbnb-experiences-guerrilla-usability-test-on-ios-app-95c2b5186970"
-      },
-      {
-        id: 8,
-        title: "Affinity Mapping",
-        contentTitle: "Affinity Mapping",
-        content: "Affinity mapping is a great way to sort through the data that you gathered from user research.\n\nBy grouping similar ideas into categories, more prominent themes start to emerge that help you decide on directions for improvement.\n\nIf you have done affinity mapping exercise, show a photo of the workshop or a simple diagram of the groupings of ideas.",
-        contentInTemplate: "If you have done affinity mapping exercise, show a photo of the workshop or a simple diagram of the groupings of ideas.",
-        exampleText: "Example: UX Study: The Search for Wine by Casper Sermsuksan",
-        exampleLink: "https://medium.muz.li/ux-study-the-search-for-wine-492be5bb3b77"
       },
       {
         id: 9,
@@ -178,6 +121,54 @@ class App extends Component {
         contentInTemplate: "If you have done a competitive analysis for your project, briefly describe the competitors you've chosen and the criteria for comparison. Include a diagram, usually a table of the competing products and their features.",
         exampleText: "Example: UX Case Study: Bookstore Responsive Website Redesign by Leow Hou Teng",
         exampleLink: "https://uxdesign.cc/ux-case-study-bookstore-responsive-website-redesign-195d15fe83c1"
+      }
+    ]});
+
+    this.setState({ designProcessBlocks: [
+      {
+        id: 0,
+        title: "Project Summary",
+        contentTitle: "Project Summary",
+        content: "Describe what the design project is about in a short paragraph. \n\nYou can outline the product you’re designing for, your personal experience that inspired the project, or a client’s need to innovate or improve on the current design. \n\nIf you’re solving a problem in a particular industry, you can include some statistics to illustrate its importance.",
+        contentInTemplate: "Describe what the design project is about in a short paragraph. You can outline the product you're designing for, your personal experience that inspired the project, or a client's need to improve on the current design.",
+        exampleText: "Example: Parallel Chat — UI/UX case study of a new chat interaction by Daniel Korpai",
+        exampleLink: "https://medium.muz.li/parallel-chat-ui-ux-case-study-of-a-new-chat-interaction-7ea6779f884b"
+      },
+      {
+        id: 1,
+        title: "Problem Statement",
+        contentTitle: "Problem Statement",
+        content: "Broadly describe the current problems you have observed in users or from your personal experience.\n\nWhat is the expected outcome that the users are trying to achieve? Does the current solution take a long time? Is it very costly? \n\nOr maybe it requires the users to go through an arduous process? If you have observed the problem from usability testing or data analysis, you can briefly describe the research methods used and the findings.",
+        contentInTemplate: "Describe the current problems you have observed in users or from your personal experience. If you have observed the problem from usability testing or data analysis, you can briefly describe the research methods used and the findings.",
+        exampleText: "Example: Gamification of timesheet entry — UX Mobile App Case Study by Sid from HelloFello Studio",
+        exampleLink: "https://medium.muz.li/gamification-of-timesheet-entry-mobile-app-ux-case-study-934c585d7945"
+      },
+      {
+        id: 6,
+        title: "User Interviews",
+        contentTitle: "User Interviews",
+        content: "Talking to users out in the field is essential for user experience research. You can gain valuable learnings from talking to even just a handful of users.\n\nDepending on your outreach method, include a photo of the set up takes the readers with you on the journey of discovering usability insights. For example, perhaps you staked out in front of a coffee shop or emailed a list of customers to schedule phone calls, include a photo of the process.\n\nBriefly describe the questions that you asked the users or the task that you asked them to complete.",
+        contentInTemplate: "Depending on your outreach method, include a photo of the set up takes the readers with you on the journey of discovering usability insights. For example, perhaps you staked out in front of a coffee shop or emailed a list of customers to schedule phone calls, include a photo of the process. Briefly describe the questions that you asked the users or the task that you asked them to complete.",
+        exampleText: "Example: Finding My Way Through The Amazon by Agnes Kim",
+        exampleLink: "https://uxdesign.cc/finding-my-way-through-the-amazon-c176509bfc23"
+      },
+      {
+        id: 3,
+        title: "Pain Points",
+        contentTitle: "Pain Points",
+        content: "Outline 3 - 5 specific pain points that users encounter while using a product or getting a job done.\n\nYou can go into more details around each pain point, perhaps describing an interaction that is hard to find, cumbersome or restrictive.\n\nIf you have done usability testing, competitive research or dug through customer feedbacks to distill these pain points, include photos, screenshots or customer quotes.",
+        contentInTemplate: "Outline 3 - 5 specific pain points that users encounter while using a product or getting a job done. If you have done usability testing, competitive research or dug through customer feedbacks to distill these pain points, include photos, screenshots or customer quotes.",
+        exampleText: "Example: Parallel Chat — UI/UX case study of a new chat interaction by Daniel Korpai",
+        exampleLink: "https://medium.muz.li/parallel-chat-ui-ux-case-study-of-a-new-chat-interaction-7ea6779f884b"
+      },
+      {
+        id: 8,
+        title: "Affinity Mapping",
+        contentTitle: "Affinity Mapping",
+        content: "Affinity mapping is a great way to sort through the data that you gathered from user research.\n\nBy grouping similar ideas into categories, more prominent themes start to emerge that help you decide on directions for improvement.\n\nIf you have done affinity mapping exercise, show a photo of the workshop or a simple diagram of the groupings of ideas.",
+        contentInTemplate: "If you have done affinity mapping exercise, show a photo of the workshop or a simple diagram of the groupings of ideas.",
+        exampleText: "Example: UX Study: The Search for Wine by Casper Sermsuksan",
+        exampleLink: "https://medium.muz.li/ux-study-the-search-for-wine-492be5bb3b77"
       },
       {
         id: 12,
@@ -196,6 +187,15 @@ class App extends Component {
         contentInTemplate: "A customer journey map illustrates the different phases in which a customer interact with the product or service and the organization that creates it. If you have created a customer journey map, include the diagram, briefly describe the categories of information you decided to illustrate, and the design decisions that were influenced by it.",
         exampleText: "Example: UX Case Study: Is there an app that can change the world? By Yin Zeng",
         exampleLink: "https://uxdesign.cc/is-there-an-app-that-can-change-the-world-6379460799c4"
+      },
+      {
+        id: 4,
+        title: "Design Solutions",
+        contentTitle: "Design Solutions",
+        content: "List 3 - 5 design solutions that you have come up with in regards to the particular pain points that you have discovered.\n\nDescribe the desired outcome of these design solutions briefly. You can list them in order of priority, and if you have done analysis with a prioritization matrix, include the workshop photo or a diagram.",
+        contentInTemplate: "List 3 - 5 design solutions that you have come up with in regards to the particular pain points that you have discovered. Describe the desired outcome of these design solutions briefly. If you have done analysis with a prioritization matrix, include the workshop photo or a diagram.",
+        exampleText: "Example: Foursquare: A UX case study by Namika Hamasaki",
+        exampleLink: "https://medium.com/haiiro-io/foursquare-a-ux-case-study-f606d4757d9b"
       },
       {
         id: 14,
