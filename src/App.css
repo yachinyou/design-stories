@@ -278,6 +278,7 @@
   padding: 1em;
   letter-spacing: 0.0625em;
   font-weight: 300;
+  white-space: pre-wrap;
 }
 
 .modal-footer .modal-link {

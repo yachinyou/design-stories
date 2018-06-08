@@ -32,6 +32,7 @@ class InfoModal extends Component {
         <ModalBody className="info-content">
           <img src={infoImage} />
           <p>{item.content}</p>
+          <p><a href={item.exampleLink} target="_blank">{item.exampleText}</a></p>
         </ModalBody>
         <ModalFooter className="modal-footer">
           <Button className="modal-link" onClick={this.toggle}>OK, GOT IT</Button>

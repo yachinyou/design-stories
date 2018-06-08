@@ -68,7 +68,7 @@ const conStyle = {
               {block.contentTitle}
             </p>
             <p className="content-description">
-            {block.content}
+            {block.contentInTemplate}
           </p>
         </div>
         )
