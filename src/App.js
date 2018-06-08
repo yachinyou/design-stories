@@ -4,18 +4,17 @@ import { DragDropContext, Draggable } from 'react-beautiful-dnd';
 import ResearchAndMethodology from './Components/ResearchAndMethodology';
 import DesignProcess from './Components/DesignProcess';
 import CaseStudy from './Components/CaseStudy';
-
 import DownloadModal from './Components/DownloadModal';
-
 import NavBar from "./Components/NavBar";
 import Hero from "./Components/Hero";
 import HelperText from "./Components/HelperText";
 import Footer from "./Components/Footer";
-
 import update from 'react-addons-update';
-
-
 import Demo from "./Components/Demo";
+
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-648673-24');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 // a little function to help us with reordering the result
   const reorder = (list, startIndex, endIndex) => {
