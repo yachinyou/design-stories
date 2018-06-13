@@ -452,6 +452,26 @@ height: 2em;
   opacity: 0.6;
   }
 
-  .social-media-link a:hover{
-    opacity: 1;
-    }
+.social-media-link a:hover{
+  opacity: 1;
+  }
+
+/**** PROCESS GRAPHIC WIDGET ****/
+
+.process-step {
+  border: 1px solid red;
+  display: inline-block;
+  margin-right: 2em;
+}
+
+.process-step input{
+  border: none;
+  overflow: visible;
+  background: none;
+}
+
+.process-step textarea{
+  height: 8em;
+  background-color: pink;
+  white-space: pre-wrap;
+}

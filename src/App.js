@@ -11,6 +11,8 @@ import HelperText from "./Components/HelperText";
 import Footer from "./Components/Footer";
 import update from 'react-addons-update';
 import Demo from "./Components/Demo";
+import ProcessGraphic from "./Components/ProcessGraphic";
+
 
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-648673-24');
@@ -384,6 +386,7 @@ class App extends Component {
             </div>
           </div>
         </div>  
+        <ProcessGraphic />
         {/* <Footer /> */}
       </div>
     );
