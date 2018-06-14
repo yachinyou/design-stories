@@ -23,13 +23,21 @@ class ProcessBall extends Component {
         console.log(this.state.stepDetails);
     }
 
+    autoGrowTextArea = () => {
+        const elements = [].slice.call(document.getElementsByClassName("process-step-details"));
+        elements.map((element) => {
+            element.style.height = "8em";
+            element.style.height = (element.scrollHeight) + "px";
+        });
+    }
+
     render(){
         return(
             <div className="process-step">
                 <div className="process-ball" style={{backgroundImage: "linear-gradient(to bottom, " + this.props.gradientColor1 + " 0%, " + this.props.gradientColor2 + " 100%)"}}>
                     <input className="process-ball-input" value={this.state.stepName} onChange={this.stepNameChangeHandler} />
                 </div>
-                <textarea className="test-textarea" value={this.state.stepDetails} onChange={this.stepDetailsChangeHandler}/>
+                <textarea className="process-step-details" value={this.state.stepDetails} onChange={this.stepDetailsChangeHandler} onKeyUp={this.autoGrowTextArea}/>
             </div>
         );
     }

@@ -458,20 +458,55 @@ height: 2em;
 
 /**** PROCESS GRAPHIC WIDGET ****/
 
+.process-graphic-panel {
+  padding: 4em 1em 4em 1em;
+}
+
 .process-step {
   border: 1px solid red;
   display: inline-block;
-  margin-right: 2em;
+  margin: 0em 1em 0em 1em;
+  vertical-align: top;
+}
+
+.process-ball {
+  position: relative;
+  width: 10em;
+  height: 10em;
+  border-radius: 5em;
+  margin: 0 auto;
 }
 
 .process-step input{
-  border: none;
+  position: absolute;
   overflow: visible;
   background: none;
+  text-align: center;
+  height: 2em;
+  width: 10em;
+  top: 50%;
+  left: 0;
+  margin-top: -1em;
+  border: none;
+  padding: none;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 0.0625em;
 }
 
 .process-step textarea{
-  height: 8em;
-  background-color: pink;
+  min-height: 8em;
+  border: none;
+  resize: none;
+  overflow: hidden;
   white-space: pre-wrap;
+  text-align: center;
+  margin-top: 1em;
+  font-size: 0.875em;
+  line-height: 1.5em;
+  color: #6A6B6B;
+  letter-spacing: 0.05em;
 }

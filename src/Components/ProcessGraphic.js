@@ -78,13 +78,15 @@ class ProcessGraphic extends Component {
         }
 
         return(
-            <div>
-                <div id="process-graphic">
-                    <ProcessBall id='step1' className="step1" stepName="Empathize" stepDetails={this.state.step1DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
-                    <ProcessBall id='step2' className="step2" stepName="Define" stepDetails={this.state.step2DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
-                    <ProcessBall id='step3' className="step3" stepName="Ideate" stepDetails={this.state.step3DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
-                    <ProcessBall id='step4' className="step4" stepName="Prototype" stepDetails={this.state.step4DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
-                    <ProcessBall id='step5' className="step5" stepName="Test" stepDetails={this.state.step5DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
+            <div className="container">
+                <div className="panel process-graphic-panel">
+                    <div id="process-graphic">
+                        <ProcessBall id='step1' className="step1" stepName="Empathize" stepDetails={this.state.step1DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
+                        <ProcessBall id='step2' className="step2" stepName="Define" stepDetails={this.state.step2DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
+                        <ProcessBall id='step3' className="step3" stepName="Ideate" stepDetails={this.state.step3DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
+                        <ProcessBall id='step4' className="step4" stepName="Prototype" stepDetails={this.state.step4DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
+                        <ProcessBall id='step5' className="step5" stepName="Test" stepDetails={this.state.step5DefaultDetails} gradientColor1={this.state.gradientColor1} gradientColor2={this.state.gradientColor2}/>
+                    </div>
                 </div>
                 <div>
                     <input id="gradientInput1" onClick={((e) => {this.inputClickHandler(e)})} value={this.state.gradientColor1} />
