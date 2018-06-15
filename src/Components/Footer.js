@@ -11,15 +11,6 @@ import ReactGoogleSheetConnector from "react-google-sheet-connector"; //for save
 import GithubCorner from "react-github-corner";
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 
-
-
-
-
-
-// const style = {
-//     margin: "0 auto"
-// }
-
 const inputStyle = {
     width: "100%",
 }
@@ -41,20 +32,14 @@ const CustomForm = ({ status, message, onValidated }) => {
 
     
     return (
-      <div
-        style={{
-         // background: "#efefef",
+      <div style={{
           borderRadius: 0,
-          padding: 10,
-        
-        }}
-      >
+          padding: 10,}}>
+
         {status === "sending" && <div style={{ color: "white" }}>Sending...</div>}
         {status === "error" && (
-          <div
-            style={{ color: "red" }}
-            dangerouslySetInnerHTML={{ __html: message }}
-          />
+          <div style={{ color: "red" }}
+            dangerouslySetInnerHTML={{ __html: message }}/>
         )}
         {status === "success" && (
           <div
@@ -71,7 +56,7 @@ const CustomForm = ({ status, message, onValidated }) => {
         </FormGroup>
         </Col>
         <Col className="email-signup-form-col"  sm={2}>
-        <button style={{ fontSize: "", padding: 5,width:"100%",height:"37px"}} onClick={submit}> SIGN UP </button>
+        <Button style={{ fontSize: "", padding: 5,width:"100%",height:"37px"}} onClick={submit}> SIGN UP </Button>
         </Col>
       
       </div>
@@ -93,44 +78,27 @@ const footer = ({ status, message, onValidated }) => {
       });
       const url ="https://designstories.us18.list-manage.com/subscribe/post?u=000b3640f9f8a33cfa84dfc79&amp;id=88485a5b69";
   
-    return (
-        <div className="footer">
-            <div className="row">
-                <div className="col-3"></div>
-                <div className="email-signup-section col-6">
-                    <p>Get UX resources that help you in the trenches</p>
-
-            <MailchimpSubscribe
-          url={url}
-          render={({ subscribe, status, message }) => (
+  return (
+    <div className="footer">
+      <div className="row">
+        <div className="col-3"></div>
+        <div className="email-signup-section col-lg-6 col-md-6 col-sm-12 col-12">
+          <p>Hello! I can email you when new tools are built</p>
+          <MailchimpSubscribe
+            url={url}
+            render={({ subscribe, status, message }) => (
             <CustomForm
               status={status}
               message={message}
-              onValidated={formData => subscribe(formData)}
-            />
-          )}
-        /> {/* 
-                    <Form inline className="email-signup-form-col">
-                        <Col className="email-signup-form-col" sm={8}>
-                        <FormGroup>
-                            <Label for="exampleEmail" hidden>Email</Label>
-                            <Input  type="email" name="email" id="resources-email-signup" placeholder="Your email" style={inputStyle} bsSize="lg"/>
-                         </FormGroup>
-                         </Col>
-                         <Col className="email-signup-form-col" sm={4}>
-                            <Button style={buttonStyle} >sign up</Button>
-                         </Col>
-                     </Form>  */} 
-                     <div className="social-media-link"><a href="#"><img src={FacebookIcon} alt="facebook icon"/></a></div>
-                     <div className="social-media-link"><a href="#"><img src={TwitterIcon} alt="twitter icon"/></a></div>
-                     <div className="social-media-link"><a href="#"><img src={MediumIcon} alt="medium icon"/></a></div>
-                     <div className="social-media-link"><a href="#"><img src={DribbbleIcon} alt="dribbble icon"/></a></div>
-                </div>
-                <div className="col-3"></div>
-            </div>
-
-            
-        </div>
+              onValidated={formData => subscribe(formData)}/>)} />
+            {/* <div className="social-media-link"><a href="#"><img src={FacebookIcon} alt="facebook icon"/></a></div>
+            <div className="social-media-link"><a href="#"><img src={TwitterIcon} alt="twitter icon"/></a></div>
+            <div className="social-media-link"><a href="#"><img src={MediumIcon} alt="medium icon"/></a></div>
+            <div className="social-media-link"><a href="#"><img src={DribbbleIcon} alt="dribbble icon"/></a></div> */}
+          </div>
+          <div className="col-3"></div>
+        </div>    
+      </div>
     )
 }
 

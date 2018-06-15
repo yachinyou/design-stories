@@ -28,14 +28,24 @@
 .nav-bar {
   background-color:#fff;
   padding-top: 1em;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
   padding-left: 2em;
+  padding-right: 2em;
   border-bottom: 1px solid #E6E6E6;
 }
 
 .nav-bar img {
   width: 135px;
   height: 20px;
+}
+
+.nav-links {
+}
+
+.nav-links a {
+  padding: 0 1em;
+  font-size: 0.875em;
+  color: #6A6B6B;
 }
 
 /**** HERO AREA ****/
@@ -84,8 +94,7 @@
   background-color: #FAFCFC;
   padding: 2em 2em 4em 2em;
   overflow: auto;
-  box-shadow: 
-        inset 0px 11px 40px -10px #EDF0F0;
+  box-shadow: inset 0px 11px 40px -10px #EDF0F0;
 }
 
 .helperText {
@@ -276,13 +285,6 @@
   color: #6A6B6B;
 }
 
-/* .info-header {
-  position: relative;
-  height: 14em;
-  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
-  text-align: center;
-} */
-
 .info-content h2{
   font-family: "Open Sans", sans-serif;
   color: #E21A6B;
@@ -459,14 +461,36 @@ height: 2em;
 /**** PROCESS GRAPHIC WIDGET ****/
 
 .process-graphic-panel {
-  padding: 4em 1em 4em 1em;
+  width: 100%;
+}
+
+.process-graphic-panel .panel-header{
+  background: #F2FAFA;
+  color: #6A6B6B;  
+}
+
+#process-graphic {
+  padding: 2em 1em;
 }
 
 .process-step {
-  border: 1px solid red;
   display: inline-block;
-  margin: 0em 1em 0em 1em;
+  margin: 0em;
   vertical-align: top;
+  padding: 1.5em 0em 1.5em 0em;
+}
+
+.process-ball-container {
+  position: relative;
+}
+
+.process-ball-container hr{
+  position: absolute;
+  top: 50%;
+  width: 12em;
+  margin: 0;
+  padding: 0;
+  color: #999;
 }
 
 .process-ball {
@@ -474,7 +498,11 @@ height: 2em;
   width: 10em;
   height: 10em;
   border-radius: 5em;
-  margin: 0 auto;
+  margin: 0em 2em 0em 0em;
+}
+
+.process-step-details-container {
+  width: 10em;
 }
 
 .process-step input{
@@ -498,15 +526,108 @@ height: 2em;
 }
 
 .process-step textarea{
-  min-height: 8em;
+  min-height: 5em;
+  width: 10em;
   border: none;
   resize: none;
   overflow: hidden;
   white-space: pre-wrap;
   text-align: center;
-  margin-top: 1em;
+  margin-top: 1.5em;
   font-size: 0.875em;
-  line-height: 1.5em;
+  line-height: 1.75em;
   color: #6A6B6B;
   letter-spacing: 0.05em;
+  background: none;
+}
+
+.process-step:nth-child(5) {
+  width: 10em;
+}
+
+.process-step:nth-child(5) hr{
+  display: none;
+}
+
+.process-graphic-control {
+  width: 100%;
+}
+
+.process-graphic-control input{
+  background-color: #fff;
+  border: 1px solid #E3E6E6;
+  text-align: left;
+  color: #6A6B6B;
+  margin: 0em 0em 0.5em 0em;
+  padding: 0.75em;
+  max-width: 7em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+.process-graphic-control .control-label{
+  color: #6A6B6B;
+  font-size: 0.875em;
+  font-weight: 600;
+  letter-spacing: 0.0625em;
+  padding: 1em;
+}
+
+.process-graphic-panel Button{
+  background-color: #E21A6B;
+  border: 1px solid #E21A6B;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.875em;
+  letter-spacing: 0.125em;
+  padding: 1em 2em 1em 2em;
+  border-radius: 4px;
+  margin: 1em 1em 1em 0;
+}
+
+.process-graphic-panel Button:hover {
+  background-color: #ffffff;
+  color: #E21A6B;
+  border: 1px solid #E21A6B;
+  cursor: pointer;
+}
+
+.feedback-area {
+  background: #ffffff;
+  margin: 2em 0 0 2em;
+}
+
+.feedback-area .profile-image {
+  width: 6em;
+  height: 6em;
+  margin-top: 1em;
+}
+
+.feedback-area .greeting h5{
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.25em;
+  letter-spacing: 0.03em;
+  padding: 0.5em;
+}
+
+.feedback-area .greeting p{
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.75em;
+  letter-spacing: 0.03em;
+  color: #999;
+}
+
+
+.feedback-area p.small-print{
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75em;
+  color: #999;
+  line-height: 1.5em;
+  padding-top: 0.5em;
+  text-align: left;
 }

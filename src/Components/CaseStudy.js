@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-import DownloadModal from './DownloadModal'
+import DownloadModal from './DownloadModal';
 import { Button } from 'reactstrap';
 import SampleCoverImage from "../Images/sample_cover_image.jpg"
 
 import * as jsPDF from 'jspdf';
-
-//import html2canvas from 'html2canvas';
-//import domtoimage from 'dom-to-image';
-//import * as saveAs from 'file-saver';
-//import { saveAs } from 'file-saver';
-//import * as rasterizeHTML from 'rasterizehtml';
 
 import '../App.css';
 
@@ -39,7 +33,6 @@ class CaseStudy extends Component {
 
 
   handleDownloadClick(e){
-
     this.downloadModal.toggle();
   }
 

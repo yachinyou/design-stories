@@ -4,9 +4,8 @@ import { Button } from 'reactstrap';
 const hero = (props) => {
     return (
         <div className="hero">
-                <h1>UX Case Study Template</h1>
-                <h5>Create a story of <span className="bold">strategy</span>, <span className="bold">discovery</span> and <span className="bold">user delight</span>, fast.</h5>
-                <Button className="hero-button" onClick={props.click}>Create Now</Button>
+            <h1>{props.header}</h1>
+            <h5>{props.subheader}</h5>
         </div>
     )
 }
