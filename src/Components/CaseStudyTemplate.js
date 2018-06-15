@@ -10,7 +10,8 @@ import NavBar from "../Components/NavBar";
 import Hero from "../Components/Hero";
 import HelperText from "../Components/HelperText";
 import update from 'react-addons-update';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import { ReactTitle } from 'react-meta-tags';
 
 // a little function to help us with reordering the result
   const reorder = (list, startIndex, endIndex) => {
@@ -179,7 +180,7 @@ class CaseStudyTemplate extends Component {
         title: "Customer Journey Mapping",
         contentTitle: "Customer Journey Mapping",
         content: "A customer journey map illustrates the different phases in which a customer interact with the product or service and the organization that creates it.\n\nFor example, an e-commerce application’s customer journey map may include the different phases of purchasing the product, the actions a customer needs to take, the touchpoints with which the customer interacts with and the emotions that the customer feels at each step.\n\nIf you have created a customer journey map, include the diagram, briefly describe the categories of information you decided to illustrate, and the design decisions that were influenced by it. ",
-        contentInTemplate: "A customer journey map illustrates the different phases in which a customer interact with the product or service and the organization that creates it. If you have created a customer journey map, include the diagram, briefly describe the categories of information you decided to illustrate, and the design decisions that were influenced by it.",
+        contentInTemplate: "A customer journey map illustrates the different phases in which a customer interacts with the product or service and the organization that creates it. If you have created a customer journey map, include the diagram, briefly describe the categories of information you decided to illustrate, and the design decisions that were influenced by it.",
         exampleText: "Example: UX Case Study: Is there an app that can change the world? By Yin Zeng",
         exampleLink: "https://uxdesign.cc/is-there-an-app-that-can-change-the-world-6379460799c4"
       },
@@ -352,6 +353,7 @@ class CaseStudyTemplate extends Component {
 
     return (
         <div id="app-area">
+          <ReactTitle title="UX Case Study Template" />
           <div className="container">
             <HelperText />
             <div className="row">
@@ -363,6 +365,10 @@ class CaseStudyTemplate extends Component {
               <DownloadModal processBlocks={this.state.designProcessBlocks} />
             </div>
           </div>
+          <div className="cross-promo">
+                        <p>Thank you for trying out this tool!</p>
+                        <p>Have you checked out the <Link to="/design-process-visualization">Design Process Visualization tool</Link>?</p>
+                    </div>
         </div>  
     );
   }

@@ -31,9 +31,10 @@ class FeedbackModal extends Component {
           <div className="greeting">
             <h5>Howdy!</h5>
             <p>I'm Yachin, UX designer and creator of this tool.<br /> <span className="bold black">Your feedback will help me improve this tool, please let me know what you think!</span></p>
+            <p>Your UX Design Process should be downloaded automatically.</p>
           </div>  
 
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdeyGBdLrVGQr7SnNssPW3SZflKGku_86koT4FZ9WSbWxJ4Yg/viewform?embedded=true" width="400" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScN-_YdKlnP8Fi7V_qOyAi2ch976eGzY0vW_B5fAfy1DOoekg/viewform?embedded=true" width="400" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
         </ModalBody>
       </Modal>

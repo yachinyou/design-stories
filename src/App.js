@@ -7,6 +7,8 @@ import Hero from "./Components/Hero";
 import CaseStudyTemplate from "./Components/CaseStudyTemplate";
 import ProcessGraphic from './Components/ProcessGraphic';
 import Footer from "./Components/Footer";
+import { ReactTitle } from 'react-meta-tags';
+import Favicon from 'react-favicon';
 
 
 import ReactGA from 'react-ga';
@@ -20,6 +22,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
+          <ReactTitle title="DesignStories" />
           <NavBar />
           <Route path="/" exact render={props => <Hero header="Home" subheader="home of my projects, coming soon..." {...props} />} />
           <Route path="/ux-case-study-template" exact render={props => <Hero header="UX Case Study Template" subheader="Create a story of strategy, discovery and user delight, fast." {...props} />} />

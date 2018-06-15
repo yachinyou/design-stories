@@ -6,6 +6,8 @@ import FileSaver from 'file-saver';
 import { Button } from 'reactstrap';
 import ProfileImage from "../Images/yachin_profile.png";
 import FeedbackModal from "../Components/FeedbackModal";
+import { Link } from "react-router-dom";
+import { ReactTitle } from 'react-meta-tags';
 
 class ProcessGraphic extends Component {
 
@@ -78,7 +80,7 @@ class ProcessGraphic extends Component {
 
         domtoimage.toBlob(document.getElementById('process-graphic'))
         .then(function (blob) {
-            FileSaver.saveAs(blob, 'my-node.png');
+            FileSaver.saveAs(blob, 'my-ux-design-process.png');
         });
 
         this.feedbackModal.toggle();
@@ -87,9 +89,9 @@ class ProcessGraphic extends Component {
     render(){
 
         const popover = {
-            position: "relative",
+            position: "absolute",
             zIndex: "2",
-            top: "-100%"
+            top: "100%"
         }
 
         const cover = {
@@ -101,11 +103,12 @@ class ProcessGraphic extends Component {
         }
 
         return(
-            <div id="app-area">
+            <div id="app-area"> 
+                <ReactTitle title="UX Design Process Visualization" />
                 <div className="container">
                     <div class="row">
                         <div className="helperText col-lg-12 col-md-12 col-sm-12 col-12">
-                            <p><span className="bold black">Edit text</span>, <span className="bold black">change colors</span> and <span className="bold pink">Download</span> your own UX design process graphic. <br /> Best used on desktop.</p>
+                            <p><span className="bold black">Edit text</span>, <span className="bold black">change colors</span> and <span className="bold pink">Download</span> your own UX design process graphic.</p>
                         </div>
                         <div className="panel process-graphic-panel">
                             <div className="panel-header">
@@ -127,15 +130,25 @@ class ProcessGraphic extends Component {
                             <input id="gradientInput2" className="float-left" onClick={((e) => {this.inputClickHandler(e)})} value={this.state.gradientColor2} />
                             <p className="control-label float-left">Header Color</p>
                             <input id="stepNameColor" className="float-left" onClick={((e) => {this.inputClickHandler(e)})} value={this.state.stepNameColor} />
-                            {this.state.displayColorPicker ? 
+                            {/* {this.state.displayColorPicker ? 
+                                <div style={popover}>
+                                    <div style={cover} onClick={this.closeColorPicker} />
+                                        <SketchPicker onChangeComplete={this.handleChangeComplete} color={ this.colorPickerDefaultColor(this.state.colorPickerFor) }/>
+                                </div> : null    
+                            } */}
+                        </div>
+                        {this.state.displayColorPicker ? 
                                 <div style={popover}>
                                     <div style={cover} onClick={this.closeColorPicker} />
                                         <SketchPicker onChangeComplete={this.handleChangeComplete} color={ this.colorPickerDefaultColor(this.state.colorPickerFor) }/>
                                 </div> : null    
                             }
-                        </div>
                         <FeedbackModal ref={feedback => this.feedbackModal = feedback}/>
 
+                    </div>
+                    <div className="cross-promo">
+                        <p>Thank you for trying out this tool!</p>
+                        <p>Have you checked out the <Link to="/ux-case-study-template">UX Case Study Template</Link>?</p>
                     </div>
                 </div>
             </div>

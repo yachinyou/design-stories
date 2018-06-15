@@ -25,27 +25,26 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
-.nav-bar {
-  background-color:#fff;
-  padding-top: 1em;
-  padding-bottom: 3em;
-  padding-left: 2em;
-  padding-right: 2em;
-  border-bottom: 1px solid #E6E6E6;
-}
 
 .nav-bar img {
   width: 135px;
   height: 20px;
 }
 
-.nav-links {
-}
-
-.nav-links a {
+.nav-bar a {
   padding: 0 1em;
   font-size: 0.875em;
   color: #6A6B6B;
+  letter-spacing: 0.0625em;
+}
+
+.nav-bar a:hover {
+  color: #E21A6B;
+  text-decoration: none;
+}
+
+.nav-item {
+  padding: 0.5em;
 }
 
 /**** HERO AREA ****/
@@ -462,6 +461,7 @@ height: 2em;
 
 .process-graphic-panel {
   width: 100%;
+  min-width: 60em;
 }
 
 .process-graphic-panel .panel-header{
@@ -551,6 +551,7 @@ height: 2em;
 
 .process-graphic-control {
   width: 100%;
+  min-width: 60em;
 }
 
 .process-graphic-control input{
@@ -593,41 +594,15 @@ height: 2em;
   cursor: pointer;
 }
 
-.feedback-area {
-  background: #ffffff;
-  margin: 2em 0 0 2em;
+.cross-promo {
+  margin-top: 2em;
+  border-top: 1px solid #E3E6E6;
+  padding: 3em;
 }
 
-.feedback-area .profile-image {
-  width: 6em;
-  height: 6em;
-  margin-top: 1em;
-}
-
-.feedback-area .greeting h5{
-  font-family: "Open Sans", sans-serif;
-  font-size: 2em;
+.cross-promo p{
+  font-size: 1.5em;
   font-weight: 300;
-  line-height: 1.25em;
-  letter-spacing: 0.03em;
-  padding: 0.5em;
-}
-
-.feedback-area .greeting p{
-  font-family: "Open Sans", sans-serif;
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.75em;
-  letter-spacing: 0.03em;
-  color: #999;
 }
 
 
-.feedback-area p.small-print{
-  font-family: "Open Sans", sans-serif;
-  font-size: 0.75em;
-  color: #999;
-  line-height: 1.5em;
-  padding-top: 0.5em;
-  text-align: left;
-}
