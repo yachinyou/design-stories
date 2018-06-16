@@ -29,7 +29,6 @@ class App extends Component {
           <Route path="/ux-case-study-template" exact component={CaseStudyTemplate} />
           <Route path="/design-process-visualization" exact render={props => <Hero header="Design Process Visualization" subheader="Enlighten your audience with effective graphs." {...props} />} />
           <Route path="/design-process-visualization" exact component={ProcessGraphic} />
-          <Route path="/" component={Footer} />
         </div>
       </BrowserRouter>
     );
